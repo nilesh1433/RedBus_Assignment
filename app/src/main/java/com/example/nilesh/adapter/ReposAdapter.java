@@ -18,6 +18,7 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.example.nilesh.model.Items;
 import com.example.nilesh.redbus.R;
 import com.example.nilesh.redbus.WebViewActivity;
+import com.example.nilesh.util.CircularImageView;
 import com.example.nilesh.util.TextAwesome;
 import com.example.nilesh.util.VolleySingleton;
 
@@ -40,7 +41,7 @@ public class ReposAdapter extends BaseAdapter {
     // holder for view to make listview scroll smooth
     static class ViewHolder {
         TextAwesome reposName, follower, fork, watcher, userName;
-        ImageView userPic;
+        CircularImageView userPic;
         RelativeLayout container;
     }
 
@@ -81,7 +82,7 @@ public class ReposAdapter extends BaseAdapter {
             viewHolder.fork = (TextAwesome) convertView.findViewById(R.id.fork);
             viewHolder.watcher = (TextAwesome) convertView.findViewById(R.id.watcher);
             viewHolder.userName = (TextAwesome) convertView.findViewById(R.id.userName);
-            viewHolder.userPic = (ImageView) convertView.findViewById(R.id.userPic);
+            viewHolder.userPic = (CircularImageView) convertView.findViewById(R.id.userPic);
             viewHolder.container = (RelativeLayout) convertView.findViewById(R.id.container);
             convertView.setTag(viewHolder);
         } else {

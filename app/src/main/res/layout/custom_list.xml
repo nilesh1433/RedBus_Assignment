@@ -90,7 +90,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_alignParentRight="true">
-        <ImageView
+        <com.example.nilesh.util.CircularImageView
             android:id="@+id/userPic"
             android:layout_width="@dimen/user_image_size"
             android:layout_height="@dimen/user_image_size"

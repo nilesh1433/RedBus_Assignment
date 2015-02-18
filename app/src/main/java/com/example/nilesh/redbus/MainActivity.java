@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewPropertyAnimator;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -161,4 +162,5 @@ public class MainActivity extends ActionBarActivity {
                 Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(searchQuery.getWindowToken(), 0);
     }
+
 }
