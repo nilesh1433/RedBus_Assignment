@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="extra_info_text_color">#000000</color>
+    <color name="user_name_text_color">#000000</color>
+    <color name="repos_text_color">#FFFFFF</color>
+    <color name="search_bar">#CCFF66</color>
+    <color name="normal_list_background">#66CCFF</color>
+    <color name="selected_list_background">#52a3cc</color>
+    <color name="shadow">#ca39883d</color>
+</resources>
