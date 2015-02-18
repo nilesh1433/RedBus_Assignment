@@ -1,11 +1,15 @@
 package com.example.nilesh.adapter;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -13,6 +17,7 @@ import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.example.nilesh.model.Items;
 import com.example.nilesh.redbus.R;
+import com.example.nilesh.redbus.WebViewActivity;
 import com.example.nilesh.util.TextAwesome;
 import com.example.nilesh.util.VolleySingleton;
 
@@ -36,6 +41,7 @@ public class ReposAdapter extends BaseAdapter {
     static class ViewHolder {
         TextAwesome reposName, follower, fork, watcher, userName;
         ImageView userPic;
+        RelativeLayout container;
     }
 
     public ReposAdapter(Context context, List<Items> reposList) {
@@ -76,6 +82,7 @@ public class ReposAdapter extends BaseAdapter {
             viewHolder.watcher = (TextAwesome) convertView.findViewById(R.id.watcher);
             viewHolder.userName = (TextAwesome) convertView.findViewById(R.id.userName);
             viewHolder.userPic = (ImageView) convertView.findViewById(R.id.userPic);
+            viewHolder.container = (RelativeLayout) convertView.findViewById(R.id.container);
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
@@ -126,6 +133,19 @@ public class ReposAdapter extends BaseAdapter {
                 System.out.println(volleyError);
             }
         });
+
+        //adding click listener to list layout, on click it opens webview activity
+        viewHolder.container.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, WebViewActivity.class);
+                intent.putExtra("url", item.getGitUrl());
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+            }
+        });
+
         return convertView;
     }
+
 }

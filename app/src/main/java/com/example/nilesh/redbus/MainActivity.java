@@ -1,6 +1,7 @@
 package com.example.nilesh.redbus;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -81,6 +83,7 @@ public class MainActivity extends ActionBarActivity {
     //called when user taps on search button
     public void searchRepos(View v)
     {
+        hideKeyboard();
         if(Utilities.isDeviceOnline(getApplicationContext())) {
             String query = searchQuery.getText().toString();
             //show alert dialog if user taps on search without entering any name else make request
@@ -150,5 +153,12 @@ public class MainActivity extends ActionBarActivity {
 
         //adding to the queue for further processing
         VolleySingleton.getInstance(this).addToRequestQueue(jsonObjectRequest);
+    }
+
+    private void hideKeyboard()
+    {
+        InputMethodManager imm = (InputMethodManager)getSystemService(
+                Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(searchQuery.getWindowToken(), 0);
     }
 }

@@ -14,7 +14,7 @@ public class Items
     int watchersCount;
     int forksCount;
     Owner owner;
-    @SerializedName("git_url")
+    @SerializedName("html_url")
     String gitUrl;
     int follwerCount = -1;
 

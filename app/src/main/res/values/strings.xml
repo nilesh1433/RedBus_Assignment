@@ -8,5 +8,6 @@
     <string name="no_repos_found">No repository found</string>
     <string name="ok">Ok</string>
     <string name="search_hint">Enter repos name to search</string>
+    <string name="title_activity_web_view">Repository View</string>
 
 </resources>
