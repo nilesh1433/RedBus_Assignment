@@ -374,6 +374,11 @@ public class CircularImageView extends ImageView {
         }
     }
 
+    @Override
+    public Drawable getDrawable() {
+        return super.getDrawable();
+    }
+
     /**
      * Convert a drawable object into a Bitmap.
      * @param drawable Drawable to extract a Bitmap from.

@@ -3,8 +3,10 @@ package com.example.nilesh.redbus;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.webkit.WebView;
 import android.widget.ProgressBar;
 
@@ -15,20 +17,29 @@ public class WebViewActivity extends ActionBarActivity {
 
     private WebView web;
     private ProgressBar progressBar;
+    private Toolbar toolBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_view);
 
+        //for showing progress bar at the time of page load
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
+        //passing parameters for loading page
         web = (WebView) findViewById(R.id.web);
         web.getSettings().setJavaScriptEnabled(true);
         web.setWebViewClient(new CustomWebViewClient(progressBar));
+
+        //loading the url passed from MainActivity
         web.loadUrl(getIntent().getStringExtra("url"));
 
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable((0xff623827)));
+        //creating toolbar
+        toolBar = (Toolbar) findViewById(R.id.toolBar);
+        setSupportActionBar(toolBar);
+
+        findViewById(R.id.app_icon).setVisibility(View.INVISIBLE);
     }
 
 

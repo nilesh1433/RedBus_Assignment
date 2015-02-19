@@ -8,4 +8,6 @@
     <dimen name="extra_info_size">24sp</dimen>
     <dimen name="user_image_size">120dp</dimen>
     <dimen name="extra_info_icon_size">64dp</dimen>
+    <dimen name="app_icon_size">45dp</dimen>
+    <dimen name="tool_bar_padding">8dp</dimen>
 </resources>

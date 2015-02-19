@@ -3,8 +3,13 @@
     android:layout_height="match_parent"
     tools:context="com.example.nilesh.redbus.WebViewActivity">
 
+    <include
+        android:id="@+id/toolBar"
+        layout="@layout/custom_tool_bar"/>
+
     <WebView
         android:id="@+id/web"
+        android:layout_below="@+id/toolBar"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

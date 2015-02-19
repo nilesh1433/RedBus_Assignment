@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -40,6 +41,7 @@ public class MainActivity extends ActionBarActivity {
     private ProgressBar loading;
     private TextView noReposFound;
     private ReposModel data;
+    private Toolbar toolBar;
 
     public static final String TAG = "MainActivity";
 
@@ -51,7 +53,9 @@ public class MainActivity extends ActionBarActivity {
         reposList = (ListView) findViewById(R.id.reposList);
         loading = (ProgressBar) findViewById(R.id.loading);
         noReposFound = (TextView) findViewById(R.id.noReposFound);
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xff623827));
+        toolBar = (Toolbar) findViewById(R.id.toolBar);
+        setSupportActionBar(toolBar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
 
     @Override

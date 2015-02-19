@@ -1,15 +1,12 @@
 package com.example.nilesh.adapter;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
